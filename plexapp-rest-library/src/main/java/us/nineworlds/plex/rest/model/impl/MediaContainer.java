@@ -22,40 +22,45 @@
  */
 
 package us.nineworlds.plex.rest.model.impl;
-
-import java.util.List;
-
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
 
+import java.util.List;
+
+/**
+ * Created by jonw on 03/10/15.
+ */
 @Root(name="MediaContainer")
 public class MediaContainer {
 
-	@Attribute(required=true)
+	@Attribute(required = true)
 	private int size;
-	
-	@Attribute(required=false)
+
+	@Attribute(required = false)
 	private int allowSync;
-	
-	@Attribute(required=false)
+
+	@Attribute(required = false)
 	private String art;
-	
-	@Attribute(required=false)
+
+	@Attribute(required = false)
 	private String identifier;
-	
-	@Attribute(required=false)
+
+	@Attribute(required = false)
+	private String machineIdentifier;
+
+	@Attribute(required = false)
 	private String mediaTagPrefix;
-	
-	@Attribute(required=false)
+
+	@Attribute(required = false)
 	private long mediaTagVersion;
-	
-	@Attribute(required=false)
+
+	@Attribute(required = false)
 	private String title1;
-	
-	@Attribute(required=false)
+
+	@Attribute(required = false)
 	private String title2;
-	
+
 	public String getTitle2() {
 		return title2;
 	}
@@ -64,34 +69,37 @@ public class MediaContainer {
 		this.title2 = title2;
 	}
 
-	@Attribute(required=false)
+	@Attribute(required = false)
 	private int sortAsc;
-	
-	@Attribute(required=false)
+
+	@Attribute(required = false)
 	private String content;
-	
-	@Attribute(required=false)
+
+	@Attribute(required = false)
 	private String viewGroup;
-	
-	@Attribute(required=false)
+
+	@Attribute(required = false)
 	private int viewMode;
-	
-	@Attribute(name="thumb",required=false)
+
+	@Attribute(name = "thumb", required = false)
 	private String parentPosterURL;
-	
-	@Attribute(name="parentIndex",required=false)
+
+	@Attribute(name = "parentIndex", required = false)
 	private String parentIndex;
-	
-	@ElementList(inline=true,required=false)
+
+	@ElementList(inline = true, required = false)
 	private List<Directory> directories;
-	
-	@ElementList(inline=true,required=false)
+
+	@ElementList(inline = true, required = false)
 	private List<Video> videos;
-	
-	@ElementList(inline=true,required=false)
+
+	@ElementList(inline = true, required = false)
 	private List<Track> tracks;
-	
-	
+
+	@ElementList(inline = true, required = false)
+	private List<User> users;
+
+
 	public List<Directory> getDirectories() {
 		return directories;
 	}
@@ -99,7 +107,7 @@ public class MediaContainer {
 	public void setDirectories(List<Directory> directory) {
 		this.directories = directory;
 	}
-	
+
 
 	public int getSize() {
 		return size;
@@ -227,8 +235,8 @@ public class MediaContainer {
 	 * Contains information like Season information for episodes
 	 * This needs to be checked if the video elements parentIndex
 	 * doesn't exist.
-	 * 
-	 * @return
+	 *
+	 * @return parentIndex
 	 */
 	public String getParentIndex() {
 		return parentIndex;
@@ -236,11 +244,19 @@ public class MediaContainer {
 
 	/**
 	 * Set the parentIndex (i.e. Season number).
+	 *
 	 * @param parentIndex
 	 */
 	public void setParentIndex(String parentIndex) {
 		this.parentIndex = parentIndex;
 	}
-	
-		
+
+
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public String getMachineIdentifier() {
+		return machineIdentifier;
+	}
 }

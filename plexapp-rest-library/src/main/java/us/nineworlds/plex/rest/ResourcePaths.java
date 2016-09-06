@@ -43,7 +43,35 @@ public class ResourcePaths {
 	public ResourcePaths(IConfiguration configuration) {
 		config = configuration;
 	}
-	
+
+	public String getPlexPassLoginURL(){
+		return config.getPlexRemoteServer() + "/users/sign_in.xml";
+	}
+
+	public String getPlexHomeUserListURL(){
+		return config.getPlexRemoteServer() + "/api/home/users";
+	}
+
+	public String getPlexHomeSwitchUserURL(String userId){
+		return getPlexHomeSwitchUserURL(userId, "");
+	}
+
+	public String getPlexHomeSwitchUserURL(String userId, String pin){
+		String url = config.getPlexRemoteServer() + "/api/home/users/" + userId + "/switch";
+		if (pin != null && pin.length() != 0){
+			url += "?pin=" + pin;
+		}
+		return url;
+	}
+
+	public String getMachineIdentityURL(){
+		return getHostPort() + "/identity";
+	}
+
+	public String getPlexHomeUserTokensURL(String machineId, String masterAccessToken){
+		return config.getPlexRemoteServer() + "/servers/" + machineId + "/access_tokens.xml?includeProfiles=1&auth_token=" + masterAccessToken;
+	}
+
 	public String getRoot() {
 		return getHostPort() + ROOT_PATH;
 	}

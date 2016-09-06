@@ -49,4 +49,30 @@ public interface IConfiguration {
 	 */
 	public abstract void setPort(String port);
 
+	public abstract String getUsername();
+	public abstract void setUsername(String username);
+
+	public abstract String getPassword();
+	public abstract void setPassword(String password);
+
+	public abstract String getClientIdentifier();
+	public abstract void setClientIdentifier(String clientIdentifier);
+
+	public abstract String getProduct();
+	public abstract void setProduct(String product);
+
+	public abstract String getProductVersion();
+	public abstract void setProductVersion(String version);
+
+	public abstract String getPlexRemoteServer();
+	public abstract void setPlexRemoteServer(String remoteHost);
+
+	public abstract String getPlexAuthenticationToken();
+	public abstract void setPlexAuthenticationToken(String token);
+
+	public abstract String getDeviceName();
+	public abstract void setDeviceName(String name);
+
+	public abstract String getDevice();
+	public abstract void setDevice(String device);
 }

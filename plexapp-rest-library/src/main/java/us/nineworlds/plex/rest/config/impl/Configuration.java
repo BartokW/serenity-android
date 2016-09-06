@@ -25,6 +25,8 @@ package us.nineworlds.plex.rest.config.impl;
 
 import us.nineworlds.plex.rest.config.IConfiguration;
 
+import java.util.UUID;
+
 /**
  * @author dcarver
  *
@@ -34,6 +36,29 @@ public class Configuration implements IConfiguration {
 	private String host;
 	
 	private String port;
+
+	private String username;
+	private String password;
+	private String clientIdentifier;
+	private String product;
+	private String productVersion;
+	private String deviceName;
+	private String device;
+	private String plexRemoteServer;
+
+	private String plexAuthenticationToken;
+
+	public Configuration(){
+		host = "localhost";
+		port = "32400";
+		username = "";
+		password = "";
+		clientIdentifier = UUID.randomUUID().toString();
+		product = "";
+		productVersion = "";
+		plexRemoteServer = "https://plex.tv";
+		plexAuthenticationToken = "";
+	}
 
 	/* (non-Javadoc)
 	 * @see com.github.kingargyle.plexapp.config.IConfiguration#getHost()
@@ -63,4 +88,75 @@ public class Configuration implements IConfiguration {
 		this.port = port;
 	}
 
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getClientIdentifier() {
+		return clientIdentifier;
+	}
+
+	public void setClientIdentifier(String clientIdentifier) {
+		this.clientIdentifier = clientIdentifier;
+	}
+
+	public String getProduct() {
+		return product;
+	}
+
+	public void setProduct(String product) {
+		this.product = product;
+	}
+
+	public String getProductVersion() {
+		return productVersion;
+	}
+
+	public void setProductVersion(String version) {
+		this.productVersion = version;
+	}
+
+	public String getPlexRemoteServer() {
+		return plexRemoteServer;
+	}
+
+	public void setPlexRemoteServer(String remoteHost) {
+		this.plexRemoteServer = remoteHost;
+	}
+
+	public String getPlexAuthenticationToken() {
+		return plexAuthenticationToken;
+	}
+
+	public void setPlexAuthenticationToken(String token) {
+		this.plexAuthenticationToken = token;
+	}
+
+	public String getDeviceName() {
+		return deviceName;
+	}
+
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+	}
+
+	public String getDevice() {
+		return device;
+	}
+
+	public void setDevice(String device) {
+		this.device = device;
+	}
 }

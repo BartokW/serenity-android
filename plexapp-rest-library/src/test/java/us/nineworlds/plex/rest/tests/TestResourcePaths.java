@@ -140,7 +140,78 @@ public class TestResourcePaths {
 		public void setPort(String port) {
 			
 		}
-		
+
+		public String getUsername() {
+			return null;
+		}
+
+		public void setUsername(String username) {
+
+		}
+
+		public String getPassword() {
+			return null;
+		}
+
+		public void setPassword(String password) {
+
+		}
+
+		public String getClientIdentifier() {
+			return null;
+		}
+
+		public void setClientIdentifier(String clientIdentifier) {
+
+		}
+
+		public String getProduct() {
+			return null;
+		}
+
+		public void setProduct(String product) {
+
+		}
+
+		public String getProductVersion() {
+			return null;
+		}
+
+		public void setProductVersion(String version) {
+
+		}
+
+		public String getPlexRemoteServer() {
+			return "https://plex.tv";
+		}
+
+		public void setPlexRemoteServer(String remoteHost) {
+
+		}
+
+		public String getPlexAuthenticationToken() {
+			return "";
+		}
+
+		public void setPlexAuthenticationToken(String token) {
+
+		}
+
+		public String getDeviceName() {
+			return "";
+		}
+
+		public void setDeviceName(String name) {
+
+		}
+
+		public String getDevice() {
+			return null;
+		}
+
+		public void setDevice(String device) {
+
+		}
 	}
 	
 	
